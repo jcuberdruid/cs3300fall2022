@@ -18,6 +18,7 @@
         <%= link_to "New project", new_project_path %>
       <% end %>
     <div style="padding-left: 2rem;">
+    <% end %>
       <h4 style="color: blue"> jasonCuthbert </h3>
       <!--- Explain what the block of code below this line is doing --->
       <% if user_signed_in? %>
