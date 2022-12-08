@@ -3,8 +3,11 @@
 <%= render @project %>
 
 <div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <% if user_signed_in? %>
+      <%= link_to "Edit this project", edit_project_path(@project) %> |
+  <% end %>
   <%= link_to "Back to projects", projects_path %>
-
-  <%= button_to "Destroy this project", @project, method: :delete %>
+  <% if user_signed_in? %>
+          <%= button_to "Destroy this project", @project, method: :delete %>
+  <% end %>
 </div>
