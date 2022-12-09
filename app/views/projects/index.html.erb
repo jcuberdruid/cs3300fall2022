@@ -12,11 +12,11 @@
           color: orange;
       }
       .project {
-          border: 2px solid black;
           justify-content: center;
       }
       .card{
           background-color: gray;
+          margin-right:20px!important
           color: orange;
       }
       
@@ -24,29 +24,35 @@
   </style> 
   </head>
 
-  <body>
-    <div>
-    <h1>CS 3300 Portfolio Project - Fall 2022</h1>
-
-    <div>
-      <h4 style="color: blue"> jasonCuthbert </h3>
-      <!--- Explain what the block of code below this line is doing --->
-      <% if user_signed_in? %>
-        <div> Welcome <%= current_user.email %> </div>
-          <%= link_to "New project", new_project_path , class: "btn btn-primary"%>
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary"%> 
+  <body class="bg-dark">
+    <div class="container p-4 bg-info text-white" style="width: auto;">
+    <!--- Explain what the block of code below this line is doing --->
+    <% if user_signed_in? %>
+      <div> Welcome <%= current_user.email %> </div>
+      <div class="col  d-flex justify-content-end align-items-start">
+          <%= link_to "New project", new_project_path , class: "btn btn-primary text-dark  bg-light"%>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary text-dark  bg-light"%> 
       <% else %>
-         <%= link_to "Sign In", "/users/sign_in" , class: "btn btn-primary"%>
+        <div>ㅤㅤㅤ </div>
+        <div class="col  d-flex justify-content-end align-items-start">
+         <%= link_to "Sign In", "/users/sign_in" , class: "btn btn-primary text-dark  bg-light"%>
       <% end %>
-      </div>
+
+    </div>
+    <div class="page-header">
+      <h1>CS 3300 Portfolio Project - Fall 2022</h1>
+    </div>
+    <p> Hello! I'm a <a href="https://eas.uccs.edu/cs/academics/undergraduate-programs/bachelor-of-science-in-computer-science">CS</a> student at UCCS in Colorado</p>
+    </div>
+    <div>
+    <div>
     </div>          
-          <h1>Projects</h1>
          <div class = "container p-4">  
              <div class="card-group">
             <% @projects.each do |project| %>
             <div class="card" style="width: auto;">
             <%= render project %>
-            <%= link_to "Show this project", project , class: "btn btn-primary" %>
+            <%= link_to "Show this project", project , class: "mt-auto btn btn-info" %>
             </div>
             <% end %>
           </div>
