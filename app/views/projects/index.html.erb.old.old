@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CS3300 Portfolio Project</title>
-
+  <style> 
+      .notice {
+          color: orange;
+      }
+      .project {
+           border: 2px solid black;
+      }
+      .projectDiv {
+      }
+  </style> 
   </head>
 
   <body>
-    <div style="margin: 5% 0 0 10%;">
-    <h1>Projects</h1>
+    <div>
     <h1>CS 3300 Portfolio Project - Fall 2022</h1>
-      
-      <p style="color: green"><%= notice %></p>
-      <% if user_signed_in? %>
-        <%= link_to "New project", new_project_path %>
-      <% end %>
-    <div style="padding-left: 2rem;">
-    <% end %>
+
+    <div>
       <h4 style="color: blue"> jasonCuthbert </h3>
       <!--- Explain what the block of code below this line is doing --->
       <% if user_signed_in? %>
@@ -28,13 +31,10 @@
         <a href="/users/sign_in"> Sign in</a>
       <% end %>
       </div>
-    </div>
-    
-          <p style="color: green"><%= notice %></p>
-          
+    </div>          
           <h1>Projects</h1>
           
-          <div id="projects">
+          <div class="projectDiv" id="projects">
             <% @projects.each do |project| %>
             <%= render project %>
             <p>
